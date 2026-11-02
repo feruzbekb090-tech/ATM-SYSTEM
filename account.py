@@ -9,6 +9,11 @@ def pin_togrimi(pin):
     return len(pin) == 4 and pin.isdigit()
 
 
+def karta_togrimi(karta):
+    """Karta raqami 16 xonali va faqat raqamlardan iborat bo'lishi kerak."""
+    return len(karta) == 16 and karta.isdigit()
+
+
 class Account:
     """Foydalanuvchining bank hisobi."""
 

@@ -1,5 +1,4 @@
-import random
-from account import Account, pin_togrimi
+from account import Account, pin_togrimi, karta_togrimi
 from transaction import Transaction
 
 
@@ -14,16 +13,6 @@ class ATM:
 
     def get_nomi(self):
         return self.__nomi
-
-    # ---------- yordamchi metodlar ----------
-    def __karta_yaratish(self):
-        """16 xonali unikal karta raqami yaratadi."""
-        while True:
-            karta = ""
-            for i in range(4):
-                karta += str(random.randint(1000, 9999))
-            if self.hisobni_topish(karta) is None:
-                return karta
 
     def __summa_kiritish(self, matn):
         """Foydalanuvchidan son oladi, noto'g'ri bo'lsa xatolik ko'taradi."""
@@ -46,19 +35,25 @@ class ATM:
             print("Xatolik: ism bo'sh bo'lishi mumkin emas!")
             return
 
+        karta = input("16 xonali karta raqamingiz: ").strip().replace(" ", "")
+        if not karta_togrimi(karta):
+            print("Xatolik: karta raqami 16 xonali raqam bo'lishi kerak!")
+            return
+        if self.hisobni_topish(karta) is not None:
+            print("Xatolik: bu karta raqami allaqachon ro'yxatdan o'tgan!")
+            return
+
         pin = input("4 xonali PIN-kod o'rnating: ").strip()
         if not pin_togrimi(pin):
             print("Xatolik: PIN-kod 4 xonali raqam bo'lishi kerak!")
             return
 
-        hisob_id = len(self.__hisoblar) + 1  # har bir hisob uchun unikal ID
-        karta = self.__karta_yaratish()
-        hisob = Account(hisob_id, egasi, karta, pin)
-        self.__hisoblar.append(hisob)
+        hisob_id = len(self.__hisoblar) + 1
+        self.__hisoblar.append(Account(hisob_id, egasi, karta, pin))
 
         print("Hisob muvaffaqiyatli yaratildi!")
         print("Hisob ID:", hisob_id)
-        print("Karta raqamingiz:", karta, "(eslab qoling!)")
+        print("Karta raqami:", karta)
 
     def tizimga_kirish(self):
         print("\n--- Tizimga kirish ---")
