@@ -1,29 +1,5 @@
 # ATM System - Bankomat boshqaruv tizimi
 
-Python 3 da **OOP (Object-Oriented Programming)** tamoyillari asosida yozilgan, console orqali ishlaydigan bankomat dasturi. Loyiha real bankomat faoliyatini soddalashtirilgan shaklda modellashtiradi.
-
----
-
-## Mundarija
-
-1. [Loyiha haqida](#-loyiha-haqida)
-2. [Loyiha maqsadi](#-loyiha-maqsadi)
-3. [Imkoniyatlar](#-imkoniyatlar)
-4. [Ishlatilgan texnologiyalar](#-ishlatilgan-texnologiyalar)
-5. [Loyiha tuzilishi](#-loyiha-tuzilishi)
-6. [Classlar tavsifi](#-classlar-tavsifi)
-7. [Classlar o'rtasidagi munosabat](#-classlar-orasidagi-munosabat)
-8. [Menular](#-menular)
-9. [Business Rules](#-business-rules)
-10. [Dastur qanday ishlaydi](#-dastur-qanday-ishlaydi)
-11. [Ishga tushirish](#-ishga-tushirish)
-12. [Namuna sessiya](#-namuna-sessiya)
-13. [Xatoliklar va ularni boshqarish](#-xatoliklar-va-ularni-boshqarish)
-14. [Cheklovlar](#-cheklovlar)
-15. [Kelajakda qo'shish mumkin bo'lgan imkoniyatlar](#-kelajakda-qoshish-mumkin-bolgan-imkoniyatlar)
-
----
-
 ## Loyiha haqida
 
 ATM System foydalanuvchilarga quyidagilarni taqdim etadi:
